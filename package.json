@@ -1,0 +1,31 @@
+{
+  "name": "svg_inline_button",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "@emotion/core": "^10.0.7",
+    "parcel": "^1.11.0",
+    "parcel-plugin-inlinesvg": "^0.1.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-svg-inline": "^2.1.1",
+    "svg": "^0.1.0"
+  },
+  "devDependencies": {
+    "emotion": "^10.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shulamyt/svg_inline_button.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shulamyt/svg_inline_button/issues"
+  },
+  "homepage": "https://github.com/shulamyt/svg_inline_button#readme"
+}
