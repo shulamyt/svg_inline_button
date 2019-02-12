@@ -6,28 +6,27 @@ import addTextSvg from "./svg/addText";
 import SvgButton from "./svgButton";
 
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { css, jsx } from "@emotion/core";
 
 class App extends React.Component {
-
-  handleClick(){
+  handleClick() {
     console.log("click");
   }
 
   render() {
     const edgButtonProps = {
-       color: "red",
-       colorOnHover: "blue",
-       colorOnActive: "green",
-       widthSvg: "30px",
-       heightSvg: "30px",
-       svg: edgeSvg,
-       onClick: this.handleClick
+      color: "red",
+      colorOnHover: "blue",
+      colorOnActive: "green",
+      widthSvg: "30px",
+      heightSvg: "30px",
+      svg: edgeSvg,
+      onClick: this.handleClick
     };
 
     const addTextButtonPropsDemoColors = {
       svgPaths: {
-        "plus": {
+        plus: {
           color: "yellow",
           colorOnHover: "purple",
           colorOnActive: "olive"
@@ -41,38 +40,43 @@ class App extends React.Component {
       svg: addTextSvg,
       onClick: this.handleClick,
       label: "Add"
-   };
+    };
 
-   const addTextButtonProps = {
-    svgPaths: {
-      "plus": {
-        color: "rgb(61, 191, 246)",
-        colorOnHover: "rgb(61, 191, 246)",
-        colorOnActive: "rgb(61, 191, 246)"
-      }
-    },
-    color: "rgb(0, 0, 0)",
-    colorOnHover: "rgb(61, 191, 246)",
-    colorOnActive: "rgb(61, 191, 246)",
-    widthSvg: "30px",
-    heightSvg: "30px",
-    svg: addTextSvg,
-    onClick: this.handleClick,
-    label: "Add"
-  }
+    const addTextButtonProps = {
+      svgPaths: {
+        plus: {
+          color: "rgb(61, 191, 246)",
+          colorOnHover: "rgb(61, 191, 246)",
+          colorOnActive: "rgb(61, 191, 246)"
+        }
+      },
+      color: "rgb(0, 0, 0)",
+      colorOnHover: "rgb(61, 191, 246)",
+      colorOnActive: "rgb(61, 191, 246)",
+      widthSvg: "30px",
+      heightSvg: "30px",
+      svg: addTextSvg,
+      onClick: this.handleClick,
+      label: "Add"
+    };
+
+    const onlyLabelButtonProps = {
+      color: "rgb(0, 0, 0)",
+      colorOnHover: "rgb(61, 191, 246)",
+      colorOnActive: "rgb(61, 191, 246)",
+      onClick: this.handleClick,
+      label: "Only text"
+    };
 
     return (
       <div>
-        
-        <SvgButton {...addTextButtonPropsDemoColors}/>
-        <SvgButton {...edgButtonProps}/>
-        
+        <SvgButton {...addTextButtonPropsDemoColors} />
+        <SvgButton {...edgButtonProps} />
+        <SvgButton {...addTextButtonProps} />
+        <SvgButton {...onlyLabelButtonProps} />
       </div>
-      
     );
   }
 }
-
-//<SvgButton {...addTextButtonProps}/>
 
 export default App;
