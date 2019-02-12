@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "@emotion/core": "^10.0.7",
+    "emotion": "^10.0.7",
     "parcel": "^1.11.0",
     "parcel-plugin-inlinesvg": "^0.1.0",
     "react": "^16.8.1",
@@ -12,9 +13,7 @@
     "react-svg-inline": "^2.1.1",
     "svg": "^0.1.0"
   },
-  "devDependencies": {
-    "emotion": "^10.0.7"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
