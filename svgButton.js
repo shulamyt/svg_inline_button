@@ -14,40 +14,27 @@ import { css, jsx } from '@emotion/core';
  */
 
 const SvgButton = (props) => {
-
-  // return (
-  //   <div onClick={props.onClick} css={css`
-  //       width: ${props.width};
-  //       height: ${props.height};
-  //       & path{
-  //         fill: ${props.color};
-  //       };
-  //       & path:hover{
-  //         fill: ${props.colorOnHover};
-  //       };
-  //       & path:active{
-  //         fill: ${props.colorOnActive};
-  //       };
-  //   `}>
-  //      {props.svg}
-  //   </div>
-  // );
   const buttonStyle = {
     width: props.width,
     height: props.height,
-    '& path': {
-      fill: props.color
+    color: props.color,
+    '&:hover': {
+      color: props.colorOnHover,
+      path: {
+        fill: props.colorOnHover
+      },
     },
-    '& path:hover': {
-      fill: props.colorOnHover
-    },
-    '& path:active': {
-       fill: props.colorOnActive
+    '&:active': {
+      color: props.colorOnActive,
+      path: {
+        fill: props.colorOnActive
+      }
     }
   };
   return (
     <div onClick={props.onClick} css={buttonStyle}>
        {props.svg}
+       <div>{props.label}</div>
     </div>
   );
 };

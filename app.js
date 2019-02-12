@@ -1,7 +1,8 @@
 import React from "react";
 //import SVGInline from "react-svg-inline";
 //import EdgeSvg from "./svg/edge.svg";
-import edgeSvg from "./svg/edge.js";
+import edgeSvg from "./svg/edge";
+import addTextSvg from "./svg/addText";
 import SvgButton from "./svgButton";
 
 /** @jsx jsx */
@@ -34,7 +35,7 @@ class App extends React.Component {
   }
 
   render() {
-    const buttonProps = {
+    const edgButtonProps = {
        color: "red",
        colorOnHover: "blue",
        colorOnActive: "green",
@@ -42,22 +43,34 @@ class App extends React.Component {
        height: "30px",
        svg: edgeSvg,
        onClick: this.handleClick
-    }
+    };
+
+    const addTextButtonProps = {
+      svgPaths: {
+        "plus": {
+          color: "rgb(61, 191, 246)",
+          colorOnHover: "rgb(61, 191, 246)",
+          colorOnActive: "rgb(61, 191, 246)"
+        }
+      },
+      color: "rgb(0, 0, 0)",
+      colorOnHover: "rgb(61, 191, 246)",
+      colorOnActive: "rgb(61, 191, 246)",
+      width: "30px",
+      height: "30px",
+      svg: addTextSvg,
+      onClick: this.handleClick,
+      label: "Add"
+   }
 
     return (
       <div>
-        <SvgButton {...buttonProps}/>
+        <SvgButton {...edgButtonProps}/>
+        <SvgButton {...addTextButtonProps}/>
       </div>
       
     );
   }
-  // svg={buttonProps.svg}
-  //         onClick={buttonProps.onClick}
-  //         color={buttonProps.color}
-  //         colorOnHover={buttonProps.colorOnHover}
-  //         colorOnActive={buttonProps.colorOnActive}
-  //         width={buttonProps.width}
-  //         height={buttonProps.height}
 }
 
 export default App;
