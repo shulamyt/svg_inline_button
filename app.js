@@ -9,27 +9,7 @@ import SvgButton from "./svgButton";
 import { css, jsx } from '@emotion/core';
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     selectedButton: undefined
-  //   };
-
-  //   this.handleButtonClick = this.handleButtonClick.bind(this);
-  // }
-
-  // handleButtonClick(selectedButton) {
-  //   this.setState({selectedButton});
-  // }
-
-  // render() {
-  //   return(
-  //     <div>
-  //       <SvgButton svg={} onClick={handleClick} isSelected={true} styleOnHover={} styleOnActive={}/>
-  //       <SvgButton onClick={handleClick}/>
-  //     </div>
-  //   );
-  // }
+  
   handleClick(){
     console.log("click");
   }
@@ -45,27 +25,46 @@ class App extends React.Component {
        onClick: this.handleClick
     };
 
-    const addTextButtonProps = {
+    const addTextButtonPropsDemoColors = {
       svgPaths: {
         "plus": {
-          color: "rgb(61, 191, 246)",
-          colorOnHover: "rgb(61, 191, 246)",
-          colorOnActive: "rgb(61, 191, 246)"
+          color: "yellow",
+          colorOnHover: "purple",
+          colorOnActive: "olive"
         }
       },
-      color: "rgb(0, 0, 0)",
-      colorOnHover: "rgb(61, 191, 246)",
-      colorOnActive: "rgb(61, 191, 246)",
+      color: "blue",
+      colorOnHover: "green",
+      colorOnActive: "red",
       width: "30px",
       height: "30px",
       svg: addTextSvg,
       onClick: this.handleClick,
       label: "Add"
-   }
+   };
+
+   const addTextButtonProps = {
+    svgPaths: {
+      "plus": {
+        color: "rgb(61, 191, 246)",
+        colorOnHover: "rgb(61, 191, 246)",
+        colorOnActive: "rgb(61, 191, 246)"
+      }
+    },
+    color: "rgb(0, 0, 0)",
+    colorOnHover: "rgb(61, 191, 246)",
+    colorOnActive: "rgb(61, 191, 246)",
+    width: "30px",
+    height: "30px",
+    svg: addTextSvg,
+    onClick: this.handleClick,
+    label: "Add"
+  }
 
     return (
       <div>
         <SvgButton {...edgButtonProps}/>
+        <SvgButton {...addTextButtonPropsDemoColors}/>
         <SvgButton {...addTextButtonProps}/>
       </div>
       
