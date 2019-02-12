@@ -25,14 +25,18 @@ const SvgButton = (props) => {
 
 const createButtonStyle = (props) => {
   const buttonStyle = {
-    width: props.width,
-    height: props.height,
+    display: 'inline-block',
+    textAlign: 'center',
     userSelect: 'none',
     cursor: 'pointer',
     '&': {
       color: props.color,
       path: {
         fill: props.color
+      },
+      svg: {
+        width: props.widthSvg,
+        height: props.heightSvg,
       }
     },
     '&:hover': {

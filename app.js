@@ -9,7 +9,7 @@ import SvgButton from "./svgButton";
 import { css, jsx } from '@emotion/core';
 
 class App extends React.Component {
-  
+
   handleClick(){
     console.log("click");
   }
@@ -19,8 +19,8 @@ class App extends React.Component {
        color: "red",
        colorOnHover: "blue",
        colorOnActive: "green",
-       width: "30px",
-       height: "30px",
+       widthSvg: "30px",
+       heightSvg: "30px",
        svg: edgeSvg,
        onClick: this.handleClick
     };
@@ -36,8 +36,8 @@ class App extends React.Component {
       color: "blue",
       colorOnHover: "green",
       colorOnActive: "red",
-      width: "30px",
-      height: "30px",
+      widthSvg: "80px",
+      heightSvg: "80px",
       svg: addTextSvg,
       onClick: this.handleClick,
       label: "Add"
@@ -54,8 +54,8 @@ class App extends React.Component {
     color: "rgb(0, 0, 0)",
     colorOnHover: "rgb(61, 191, 246)",
     colorOnActive: "rgb(61, 191, 246)",
-    width: "30px",
-    height: "30px",
+    widthSvg: "30px",
+    heightSvg: "30px",
     svg: addTextSvg,
     onClick: this.handleClick,
     label: "Add"
@@ -63,13 +63,16 @@ class App extends React.Component {
 
     return (
       <div>
-        <SvgButton {...edgButtonProps}/>
+        
         <SvgButton {...addTextButtonPropsDemoColors}/>
-        <SvgButton {...addTextButtonProps}/>
+        <SvgButton {...edgButtonProps}/>
+        
       </div>
       
     );
   }
 }
+
+//<SvgButton {...addTextButtonProps}/>
 
 export default App;
