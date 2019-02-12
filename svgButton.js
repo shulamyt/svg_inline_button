@@ -14,10 +14,27 @@ import { css, jsx } from '@emotion/core';
  */
 
 const SvgButton = (props) => {
+  const buttonStyle = createButtonStyle(props);
+  return (
+    <div onClick={props.onClick} css={buttonStyle}>
+       {props.svg}
+       <div>{props.label}</div>
+    </div>
+  );
+};
+
+const createButtonStyle = (props) => {
   const buttonStyle = {
     width: props.width,
     height: props.height,
-    color: props.color,
+    userSelect: 'none',
+    cursor: 'pointer',
+    '&': {
+      color: props.color,
+      path: {
+        fill: props.color
+      }
+    },
     '&:hover': {
       color: props.colorOnHover,
       path: {
@@ -31,11 +48,18 @@ const SvgButton = (props) => {
       }
     }
   };
-  return (
-    <div onClick={props.onClick} css={buttonStyle}>
-       {props.svg}
-       <div>{props.label}</div>
-    </div>
-  );
+  addStyleForSvgPaths(props.svgPaths, buttonStyle);
+  return buttonStyle;
 };
+
+const addStyleForSvgPaths = (svgPaths, buttonStyle) => {
+  if(svgPaths){
+    for (const classname in svgPaths) {
+      buttonStyle['&'][`path.${classname}`]        = {fill: svgPaths[classname].color};
+      buttonStyle['&:hover'][`path.${classname}`]  = {fill: svgPaths[classname].colorOnHover};
+      buttonStyle['&:active'][`path.${classname}`] = {fill: svgPaths[classname].colorOnActive};
+    }
+  };
+};
+
 export default SvgButton;
